@@ -2,45 +2,45 @@ RAG-Based Customer Support Assistant
 
 1. Project Overview
 
-This project is a Retrieval-Augmented Generation (RAG) system designed to act as a Customer Support Assistant[cite: 4, 6]. [cite_start]It utilizes a graph-based workflow to process user queries, retrieve relevant information from a PDF knowledge base, and provide context-aware answers[cite: 7, 8, 9].
+This project is a Retrieval-Augmented Generation (RAG) system designed to act as a Customer Support Assistant. It utilizes a graph-based workflow to process user queries, retrieve relevant information from a PDF knowledge base, and provide context-aware answers.
 
 Key Features:
 
-Modular Architecture: Separated concerns for loading, chunking, embedding, and retrieval[cite: 60, 105].
+Modular Architecture: Separated concerns for loading, chunking, embedding, and retrieval.
 
-Graph Orchestration: Uses LangGraph to manage state and routing logic[cite: 17, 74].
+Graph Orchestration: Uses LangGraph to manage state and routing logic.
 
-Intent-Based Routing: Automatically classifies queries into 'greeting', 'support', or 'escalate'[cite: 19, 117].
+Intent-Based Routing: Automatically classifies queries into 'greeting', 'support', or 'escalate'.
 
-Human-in-the-Loop (HITL): Escalates complex or out-of-scope queries to human agents[cite: 11, 21, 119].
+Human-in-the-Loop (HITL): Escalates complex or out-of-scope queries to human agents.
 
-Groq Integration: High-speed inference using Llama 3 models on Groq[cite: 50].
+Groq Integration: High-speed inference using Llama 3 models on Groq.
 
 2. System Architecture
 
 The system follows a High-Level Design (HLD) consisting of:
 
-Document Ingestion: PDF documents are loaded and split into semantic chunks[cite: 29, 35, 36].
+Document Ingestion: PDF documents are loaded and split into semantic chunks.
 
-Vector Store: Chunks are embedded and stored in a local ChromaDB instance[cite: 15, 30, 38].
+Vector Store: Chunks are embedded and stored in a local ChromaDB instance.
 
 Graph Workflow:
 
-Categorizer: Detects user intent[cite: 117].
+Categorizer: Detects user intent].
 
-RAG Agent: Retrieves context and generates answers[cite: 31, 39, 40].
+RAG Agent: Retrieves context and generates answers.
 
-Escalator: Handles low-confidence responses[cite: 43, 78, 81].
+Escalator: Handles low-confidence responses.
 
 3. Tech Stack
 
-LLM: Groq (Llama 3.3 70B & Llama 3.1 8B)[cite: 50].
+LLM: Groq (Llama 3.3 70B & Llama 3.1 8B).
 
-Embeddings: HuggingFace (Local)[cite: 37, 108].
+Embeddings: HuggingFace (Local).
 
-Orchestration: LangGraph[cite: 49, 113].
+Orchestration: LangGraph.
 
-Vector Database: ChromaDB[cite: 48].
+Vector Database: ChromaDB.
 
 Environment: Python, Dotenv.
 
@@ -79,7 +79,7 @@ Add your Groq key: GROQ_API_KEY=your_key_here.
 
 Add Knowledge Base:
 
-Place your PDF file (e.g., DA_Notes.pdf) inside the data/ folder[cite: 7].
+Place your PDF file (e.g., DA_Notes.pdf) inside the data/ folder.
 
 Update the pdf_path in main.py if necessary.
 
@@ -90,7 +90,7 @@ Run the assistant using:
 python main.py
 
 
-First Run: The system will index the PDF (this may take a few moments)[cite: 15].
+First Run: The system will index the PDF (this may take a few moments).
 
 Subsequent Runs: The system will load the local chroma_db for near-instant responses.
 
@@ -111,8 +111,8 @@ Subsequent Runs: The system will load the local chroma_db for near-instant respo
 
 7. Future Enhancements
 
-Multi-document support[cite: 128].
+Multi-document support.
 
-Conversation memory integration[cite: 130].
+Conversation memory integration].
 
-Web-based User Interface[cite: 29].
+Web-based User Interface.
