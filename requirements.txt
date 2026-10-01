@@ -4,6 +4,8 @@ langchain-core
 langgraph
 langchain-text-splitters
 langchain-groq
+langchain-huggingface
+sentence-transformers
 langchain-google-genai
 chromadb
 pypdf

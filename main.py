@@ -1,5 +1,5 @@
-import os
-from typing import TypedDict, List
+from pathlib import Path
+from typing import TypedDict
 from dotenv import load_dotenv
 from langgraph.graph import StateGraph, END
 
@@ -21,7 +21,7 @@ def categorizer(state: GraphState):
     Analyzes the user query to determine the path.
     Improved prompt to prevent technical questions from being treated as greetings.
     """
-    llm = get_llm("llama-3.3-70b-versatile")
+    llm = get_llm("openai/gpt-oss-20b")
     
     system_prompt = (
         "You are an intent classifier. Categorize the user query into exactly one of these labels: 'greeting', 'support', or 'escalate'.\n"
@@ -53,8 +53,7 @@ def rag_agent(state: GraphState):
     """
     The RAG Agent node. It uses the file path to find context.
     """
-    # Ensure this path is correct on your local machine
-    pdf_path = r"C:\Users\vines\OneDrive\Pictures\Desktop\RAG-Based Customer Support Assistant\data\Owners_Manual.pdf"
+    pdf_path = Path(__file__).resolve().parent / "data" / "Owners_Manual.pdf"
     
     try:
         vs = build_rag_pipeline(pdf_path)
